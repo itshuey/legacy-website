@@ -1,0 +1,261 @@
+/*------------------------------------------------
+* Modified from BootStrap's 'cover' example by @mdo (https://twitter.com/mdo)
+* hUEY 08/2018
+---------------------------------------------------- */
+
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #000;
+  border: 1px solid #000;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #000;
+}
+body {
+  color: #000;
+  text-align: left;
+  /* commented out shadows
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  */
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 40px;
+}
+
+.verticalcenter{
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 80vh; /* These two lines are counted as one :-) */
+  display: flex;
+  align-items: center;
+}
+
+.babydot {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red {
+  background-color: #fc2c28;
+}
+
+.yellow {
+  background-color: #fbba00;
+}
+
+.brown {
+  background-color: #5f4b39;
+}
+
+.green {
+  background-color: #007639;
+}
+
+.aboutSmall{
+  font-size: 14px;
+}
+.aboutBig {
+  font-size: 66px;
+}
+
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size:66px;
+    color:#fff;
+}
+
+h2, h3, h4, h5, h6, p {
+    font-family: 'Roboto Mono', monospace;
+    font-size:18px;
+    color:#fff;
+}
+
+h3 {
+    font-size:30px;
+    line-height: 0.8;
+}
+
+.description{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-style: thinitalic;
+    font-style: italic;
+    letter-spacing: 1px;
+
+}
+
+.tagline{
+    font-size: 20px;
+    font-style: italic;
+
+}
+
+.imageseries{
+    padding: 5px;
+}
+
+.content{
+  padding: 0px 40px
+}
+
+.linkdesc{
+  font-size: 15px;
+  color:#828282;
+}
+
+.lead {
+  font-size:66px;
+}
+/*
+ * Header
+ */
+.masthead-nav{
+  cursor:pointer;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+  align-items: right; f
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff; /* IE8 proofing */
+  color: rgba(255,255,255,.95);
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom-color: #fff;
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #fff;
+  font-weight: bold;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0px 0px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #999; /* IE8 proofing */
+  color: rgba(255,255,255,.5);
+}
+
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 80%;
+  }
+}
