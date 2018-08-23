@@ -15,10 +15,45 @@ y = 7*canvas.height/13
 ctx.fillStyle = 'rgb(251, 186, 0)';
 ctx.fillRect(0,0,width,height);
 
-ctx.font = "66px Roboto Mono";
-ctx.fillStyle = "white";
-ctx.textAlign = "left";
-ctx.fillText("huey.", x-20, y-42);
+// spell out huey. 
+
+setTimeout(function() {
+  ctx.font = "66px Roboto Mono";
+  ctx.fillStyle = "white";
+  ctx.textAlign = "left";
+  ctx.fillText("h", x-20, y-42);
+}, 900);
+
+setTimeout(function() {
+  ctx.font = "66px Roboto Mono";
+  ctx.fillStyle = "white";
+  ctx.textAlign = "left";
+  ctx.fillText("u", x+20, y-42);
+}, 1150);
+
+setTimeout(function() {
+  ctx.font = "66px Roboto Mono";
+  ctx.fillStyle = "white";
+  ctx.textAlign = "left";
+  ctx.fillText("e", x+59, y-42);
+}, 1400);
+
+setTimeout(function() {
+  ctx.font = "66px Roboto Mono";
+  ctx.fillStyle = "white";
+  ctx.textAlign = "left";
+  ctx.fillText("y", x+99, y-42);
+}, 1650);
+
+setTimeout(function() {
+  ctx.font = "66px Roboto Mono";
+  ctx.fillStyle = "white";
+  ctx.textAlign = "left";
+  ctx.fillText(".", x+140, y-42);
+}, 1900);
+
+
+
 
 // create objects
 
@@ -116,7 +151,7 @@ function loop() {
 
 
 // time before starting animation
-var delayInMilliseconds = 1000; 
+var delayInMilliseconds = 3000; 
 
 setTimeout(function() {
   loop();
