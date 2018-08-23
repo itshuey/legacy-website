@@ -1,4 +1,4 @@
-// setup canvas
+// Initialize canvas
 
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
@@ -6,17 +6,29 @@ var ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth;
 var height = canvas.height = window.innerHeight;
 
-// Create Var
-
+// Set base scaling for objects
 x = canvas.width/8
 y = 7*canvas.height/13
+
+// Set initial yellow screen & text
+
+ctx.fillStyle = 'rgb(251, 186, 0)';
+ctx.fillRect(0,0,width,height);
+
+ctx.font = "66px Roboto Mono";
+ctx.fillStyle = "white";
+ctx.textAlign = "left";
+ctx.fillText("huey.", x-20, y-42);
+
+// create objects
 
 var reddot       = new Dot(x, y, 1300, 'rgb(252, 44, 40)');
 var yellowdot    = new Dot(x+51, y, 1300, 'rgb(251, 186, 0)');
 var browndot     = new Dot(x+102, y, 1300, 'rgb(95, 75, 57)');
 var greendot     = new Dot(x+153, y, 1300, 'rgb(0, 118, 57)');
 
-// Define the Dots
+// Define the dots
+
 function Dot(x, y, r, color) {
     "use strict";
     
@@ -35,30 +47,25 @@ function Dot(x, y, r, color) {
 
     this.update = function() {
 	
+	// scaling the brown dot a bit faster (its the last one)
+
 	if (this.color == 'rgb(95, 75, 57)'){
-
 	  if (this.r > 300){
-
 	    this.r = this.r*0.85
 	  }
 
 	  if (this.r > 25){
-
 	    this.r = this.r*0.90
 	  }
-
 	} else {
 
+	// scaling the rest of the dots
+
 	  if (this.r > 300){
-
             this.r = this.r*0.85;
-
           } else if (this.r > 100){
-
             this.r = this.r*0.90;
-
           } else if (this.r > 25){
-
             this.r = this.r*0.92;
           }
 	}
@@ -67,10 +74,7 @@ function Dot(x, y, r, color) {
 
 
 
-//Draw the circle as object
-
-reddot.draw(ctx);
-
+// Animate the dots!
 
 function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
@@ -95,11 +99,26 @@ function loop() {
       reddot.draw(ctx);
   }
 
+  if (yellowdot.r < 1300){
+      yellowdot.draw(ctx);
+  } else {
+
+      ctx.font = "66px Roboto Mono";
+      ctx.fillStyle = "white";
+      ctx.textAlign = "left";
+      ctx.fillText("huey.", x-20, y-42); 
+  }
   yellowdot.update();
-  yellowdot.draw(ctx);
+
 
   requestAnimationFrame(loop);
 }
 
 
-loop();
+// time before starting animation
+var delayInMilliseconds = 1000; 
+
+setTimeout(function() {
+  loop();
+}, delayInMilliseconds);
+
