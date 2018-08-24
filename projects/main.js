@@ -62,14 +62,23 @@ setTimeout(function() {
 }, delayInMilliseconds);
 
 
+// only autoscroll if canvas is in view
+
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    rect.bottom >= 0 
+  );
+}
+
+
+function autoScroll(){
+  if (isInViewport(canvas)){
+    document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+
 setTimeout(function() {
-  document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth' });  
+  autoScroll();
 }, 1000);
-
-
-
-
-
-
-
-
