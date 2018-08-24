@@ -20,7 +20,7 @@ function updateY(){
 
 }
 
-y = 20;
+y = 1;
 
 function loop() {
 
