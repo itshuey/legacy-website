@@ -9,24 +9,6 @@ var height = canvas.height = window.innerHeight;
 ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
 ctx.fillRect(0,0,width,height);
 
-// make internal link smooth
-// we probably replace this general case with just the cover case
-
-let anchorlinks = document.querySelectorAll('a[href^="#"]')
- 
-for (let item of anchorlinks) { 
-    item.addEventListener('click', (e)=> {
-        let val = item.getAttribute('href')
-        let target = document.querySelector(val)
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-        history.pushState(null, null, val)
-        e.preventDefault()
-    })
-}
-
 // set up initial animation
 
 function updateY(){
