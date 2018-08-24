@@ -11,6 +11,7 @@ ctx.fillRect(0,0,width,height);
 
 // make internal link smooth
 
+/*
 let anchorlinks = document.querySelectorAll('a[href^="#"]')
  
 for (let item of anchorlinks) { 
@@ -25,6 +26,7 @@ for (let item of anchorlinks) {
         e.preventDefault()
     })
 }
+*/
 
 // set up initial animation
 
