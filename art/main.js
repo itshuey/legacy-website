@@ -6,6 +6,9 @@ var ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth;
 var height = canvas.height = window.innerHeight;
 
+ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+ctx.fillRect(0,0,width,height);
+
 // make internal link smooth
 
 let anchorlinks = document.querySelectorAll('a[href^="#"]')
