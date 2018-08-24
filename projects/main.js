@@ -6,71 +6,38 @@ var ctx = canvas.getContext('2d');
 var width = canvas.width = window.innerWidth;
 var height = canvas.height = window.innerHeight;
 
-// Create Var
+// make internal link smooth
 
-ctx.fillStyle = 'rgb(251, 186, 0)';
-ctx.fillRect(0,0,width,height);
 
-x = canvas.width/4
-y = 1*canvas.height/2
+// set up initial animation
 
-var reddot       = new Dot(x + 30, y - 63, 1300, 'rgb(252, 44, 40)');
+function updateY(){
+  if (y < this.height/2){
+    y = y*1.3;
+  } else if (y < this.height){
+    y = y*1.04;
+  }
 
-// Define the Dots
-function Dot(x, y, r, color) {
-    "use strict";
-    
-    // Set defaults
-    this.x = (x === null) ? 0 : x;
-    this.y = (y === null) ? 0 : y;
-    this.r = (r === null) ? 0 : r;
-    this.color = color;
-    
-    this.draw = function(ctx) {
-        ctx.beginPath();
-	ctx.fillStyle = this.color;
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
-        ctx.fill();
-    }
-
-    this.update = function() {
-
-      if (this.r > 300){
-
-        this.r = this.r*0.92;
-
-      } else if (this.r > 170){
-
-        this.r = this.r*0.9;
-
-      } else {
-
-        this.r = this.r*0.5;
-      }
-
-    }
 }
 
-
-
-//Draw the circle as object
-
-reddot.draw(ctx);
-
+y = 20;
 
 function loop() {
+
   ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
   ctx.fillRect(0,0,width,height);
 
-  reddot.update();
-  reddot.draw(ctx);
+  ctx.fillStyle = 'rgb(252, 44, 40)';
+  ctx.fillRect(0,0,width,y);
 
+  updateY();
   requestAnimationFrame(loop);
 }
 
+loop();
 
 // time before starting animation
-var delayInMilliseconds = 1300; 
+var delayInMilliseconds = 200; 
 
 setTimeout(function() {
   loop();
@@ -78,11 +45,8 @@ setTimeout(function() {
 
 
 setTimeout(function() {
-
   document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth' });  
-}, 1700);
-
-
+}, 1000);
 
 
 
