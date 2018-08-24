@@ -56,7 +56,7 @@ function isInViewport(element) {
 
 function autoScroll(){
   if (isInViewport(canvas)){
-    document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth' });
+    document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth',  block: 'start' });
   }
 }
 

@@ -65,7 +65,7 @@ setTimeout(function() {
 
 
 setTimeout(function() {
-  document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth' });  
+  document.getElementById( 'top' ).scrollIntoView({ behavior: 'smooth', block: 'start' });  
 }, 1000);
 
 
