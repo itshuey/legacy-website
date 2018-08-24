@@ -10,6 +10,7 @@ ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
 ctx.fillRect(0,0,width,height);
 
 // make internal link smooth
+// we probably replace this general case with just the cover case
 
 let anchorlinks = document.querySelectorAll('a[href^="#"]')
  
