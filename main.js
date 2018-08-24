@@ -111,6 +111,9 @@ function Dot(x, y, r, color) {
 
 // Animate the dots!
 
+// figure out order of text
+// delete else statements?
+
 function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
   ctx.fillRect(0,0,width,height);
@@ -118,6 +121,7 @@ function loop() {
   ctx.fillStyle = "white";
   ctx.textAlign = "left";
   ctx.fillText("huey.", x-20, y-42); 
+
 
   if (greendot.r < 300){
       browndot.update();
@@ -134,17 +138,8 @@ function loop() {
       reddot.draw(ctx);
   }
 
-  if (yellowdot.r < 1300){
-      yellowdot.draw(ctx);
-  } else {
-
-      ctx.font = "66px Roboto Mono";
-      ctx.fillStyle = "white";
-      ctx.textAlign = "left";
-      ctx.fillText("huey.", x-20, y-42); 
-  }
+  yellowdot.draw(ctx);
   yellowdot.update();
-
 
   requestAnimationFrame(loop);
 }
