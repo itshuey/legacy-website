@@ -10,17 +10,29 @@ ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
 ctx.fillRect(0,0,width,height);
 
 // set up initial animation
+v = 1.05;
+a = 0;
 
 function updateY(){
-  if (y < this.height/2){
-    y = y*1.3;
+  if (y < this.height/3){
+    y = (v+a)*y;
+    if (a < 5){
+      a += 0.01;
+    }
+  } else if (y < 2*this.height/3){
+    y = (v+a)*y;
+    if (a > 0){
+       a -= 0.09;
+    }
   } else if (y < this.height){
-    y = y*1.04;
+    y = (v+a)*y;
+    if (a > -0.04){
+       a -= 0.01;
+    }
   }
-
 }
 
-y = 1;
+y = 3;
 
 function loop() {
 
@@ -39,10 +51,11 @@ loop();
 // time before starting animation
 var delayInMilliseconds = 200; 
 
+/*
 setTimeout(function() {
   loop();
 }, delayInMilliseconds);
-
+*/
 
 // only autoscroll if canvas is in view
 

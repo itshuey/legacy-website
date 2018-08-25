@@ -86,22 +86,22 @@ function Dot(x, y, r, color) {
 
 	if (this.color == 'rgb(95, 75, 57)'){
 	  if (this.r > 300){
-	    this.r = this.r*0.85
+	    this.r = this.r*0.84
 	  }
 
 	  if (this.r > 25){
-	    this.r = this.r*0.90
+	    this.r = this.r*0.88
 	  }
 	} else {
 
 	// scaling the rest of the dots
 
 	  if (this.r > 300){
-            this.r = this.r*0.85;
+            this.r = this.r*0.81;
           } else if (this.r > 100){
-            this.r = this.r*0.90;
+            this.r = this.r*0.88;
           } else if (this.r > 25){
-            this.r = this.r*0.92;
+            this.r = this.r*0.90;
           }
 	}
     }
