@@ -9,37 +9,30 @@ var height = canvas.height = window.innerHeight;
 ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
 ctx.fillRect(0,0,width,height);
 
-// make internal link smooth
-
-/*
-let anchorlinks = document.querySelectorAll('a[href^="#"]')
- 
-for (let item of anchorlinks) { 
-    item.addEventListener('click', (e)=> {
-        let val = item.getAttribute('href')
-        let target = document.querySelector(val)
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
-        history.pushState(null, null, val)
-        e.preventDefault()
-    })
-}
-*/
-
 // set up initial animation
+y = 5;
+v = 1.05;
+a = 0;
 
 function updateY(){
-  if (y < this.height/2){
-    y = y*1.3;
+  if (y < this.height/3){
+    y = (v+a)*y;
+    if (a < 5){
+      a += 0.01;
+    }
+  } else if (y < 2*this.height/3){
+    y = (v+a)*y;
+    if (a > 0){
+       a -= 0.08;
+    }
   } else if (y < this.height){
-    y = y*1.04;
+    y = (v+a)*y;
+    if (a > -0.04){
+       a -= 0.008;
+    }
   }
-
 }
 
-y = 1;
 
 
 function loop() {
@@ -55,13 +48,6 @@ function loop() {
 }
 
 loop();
-
-// this is to smooth out speed, exponentially
-var delayInMilliseconds = 200; 
-
-setTimeout(function() {
-  loop();
-}, delayInMilliseconds);
 
 
 setTimeout(function() {

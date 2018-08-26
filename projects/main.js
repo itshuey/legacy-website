@@ -10,6 +10,7 @@ ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
 ctx.fillRect(0,0,width,height);
 
 // set up initial animation
+y = 5;
 v = 1.05;
 a = 0;
 
@@ -22,17 +23,17 @@ function updateY(){
   } else if (y < 2*this.height/3){
     y = (v+a)*y;
     if (a > 0){
-       a -= 0.09;
+       a -= 0.08;
     }
   } else if (y < this.height){
     y = (v+a)*y;
     if (a > -0.04){
-       a -= 0.01;
+       a -= 0.008;
     }
   }
 }
 
-y = 3;
+
 
 function loop() {
 
