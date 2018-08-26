@@ -30,7 +30,10 @@ function updateY(){
     if (a > -0.04){
        a -= 0.008;
     }
-  }
+    if (y > this.height-10){
+       go();
+    }
+  } 
 }
 
 
@@ -65,8 +68,14 @@ function autoScroll(){
   }
 }
 
+function go(){
+    setTimeout(function() {
+    autoScroll();
+  }, 330);
+}
 
+/*
 setTimeout(function() {
   autoScroll();
 }, 1000);
-
+*/
