@@ -83,25 +83,36 @@ function Dot(x, y, r, color) {
     this.update = function() {
 	
 	// scaling the brown dot a bit faster (its the last one)
-
+	
+	
 	if (this.color == 'rgb(95, 75, 57)'){
+	/*
 	  if (this.r > 300){
-	    this.r = this.r*0.85
+	    this.r = this.r*0.84
 	  }
 
 	  if (this.r > 25){
-	    this.r = this.r*0.90
+	    this.r = this.r*0.89
 	  }
+	*/
+	  if (this.r > 300){
+            this.r = this.r*0.84;
+          } else if (this.r > 100){
+            this.r = this.r*0.89;
+          } else if (this.r > 25){
+            this.r = this.r*0.90;
+          }
+	
 	} else {
 
 	// scaling the rest of the dots
 
 	  if (this.r > 300){
-            this.r = this.r*0.85;
+            this.r = this.r*0.84;
           } else if (this.r > 100){
-            this.r = this.r*0.90;
+            this.r = this.r*0.89;
           } else if (this.r > 25){
-            this.r = this.r*0.92;
+            this.r = this.r*0.91;
           }
 	}
     }
