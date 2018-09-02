@@ -86,6 +86,7 @@ function Dot(x, y, r, color) {
 	
 	
 	if (this.color == 'rgb(95, 75, 57)'){
+
 	/*
 	  if (this.r > 300){
 	    this.r = this.r*0.84
@@ -95,10 +96,11 @@ function Dot(x, y, r, color) {
 	    this.r = this.r*0.89
 	  }
 	*/
+
 	  if (this.r > 300){
             this.r = this.r*0.84;
           } else if (this.r > 100){
-            this.r = this.r*0.89;
+            this.r = this.r*0.88;
           } else if (this.r > 25){
             this.r = this.r*0.90;
           }
