@@ -53,8 +53,6 @@ setTimeout(function() {
 }, 1900);
 
 
-
-
 // create objects
 
 var reddot       = new Dot(x, y, 1300, 'rgb(252, 44, 40)');
@@ -84,9 +82,9 @@ function Dot(x, y, r, color) {
 	
 	// scaling the brown dot a bit faster (its the last one)
 	
-	
 	if (this.color == 'rgb(95, 75, 57)'){
 
+	// deprecated settings (less gentle)
 	/*
 	  if (this.r > 300){
 	    this.r = this.r*0.84
@@ -123,9 +121,6 @@ function Dot(x, y, r, color) {
 
 
 // Animate the dots!
-
-// figure out order of text
-// delete else statements?
 
 function loop() {
   ctx.fillStyle = 'rgba(0,0,0,0.25)';
@@ -164,4 +159,3 @@ var delayInMilliseconds = 3000;
 setTimeout(function() {
   loop();
 }, delayInMilliseconds);
-
