@@ -55,10 +55,10 @@ setTimeout(function() {
 
 // create objects
 
-var reddot       = new Dot(x, y, 1300, 'rgb(252, 44, 40)');
-var yellowdot    = new Dot(x+51, y, 1300, 'rgb(251, 186, 0)');
-var browndot     = new Dot(x+102, y, 1300, 'rgb(95, 75, 57)');
-var greendot     = new Dot(x+153, y, 1300, 'rgb(0, 118, 57)');
+var reddot       = new Dot(x, y, 1800, 'rgb(252, 44, 40)');
+var yellowdot    = new Dot(x+51, y, 1800, 'rgb(251, 186, 0)');
+var browndot     = new Dot(x+102, y, 1800, 'rgb(95, 75, 57)');
+var greendot     = new Dot(x+153, y, 1800, 'rgb(0, 118, 57)');
 
 // Define the dots
 
@@ -81,11 +81,11 @@ function Dot(x, y, r, color) {
     this.update = function() {
 	
 	// scaling the brown dot a bit faster (its the last one)
-	
 	if (this.color == 'rgb(95, 75, 57)'){
 
-	// deprecated settings (less gentle)
+	
 	/*
+	// deprecated settings (less gentle)
 	  if (this.r > 300){
 	    this.r = this.r*0.84
 	  }
@@ -94,8 +94,9 @@ function Dot(x, y, r, color) {
 	    this.r = this.r*0.89
 	  }
 	*/
-
-	  if (this.r > 300){
+	  if (this.r > 800){
+	    this.r = this.r*0.78;
+	  } else if (this.r > 300){
             this.r = this.r*0.84;
           } else if (this.r > 100){
             this.r = this.r*0.88;
@@ -106,8 +107,9 @@ function Dot(x, y, r, color) {
 	} else {
 
 	// scaling the rest of the dots
-
-	  if (this.r > 300){
+	  if (this.r > 800){
+	    this.r = this.r*0.80;
+	  } else if (this.r > 300){
             this.r = this.r*0.84;
           } else if (this.r > 100){
             this.r = this.r*0.89;
