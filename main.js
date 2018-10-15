@@ -55,6 +55,8 @@ setTimeout(function() {
 
 // create objects
 
+// experiment with objects depending on x and y, proportional scaling???
+// radius of x/2 should work
 var reddot       = new Dot(x, y, 1800, 'rgb(252, 44, 40)');
 var yellowdot    = new Dot(x+51, y, 1800, 'rgb(251, 186, 0)');
 var browndot     = new Dot(x+102, y, 1800, 'rgb(95, 75, 57)');
