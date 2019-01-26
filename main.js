@@ -75,7 +75,7 @@ function Dot(x, y, r, color) {
     
     this.draw = function(ctx) {
         ctx.beginPath();
-	ctx.fillStyle = this.color;
+	      ctx.fillStyle = this.color;
         ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
         ctx.fill();
     }
